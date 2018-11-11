@@ -1,0 +1,125 @@
+#pokemon-modal{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#111, .7);
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 10;
+
+  &.open{
+    display: flex;
+  }
+
+  .modal{
+    position: relative;
+    height: 700px;
+    max-height: calc(100vh - 2em);
+    width: 450px;
+    max-width: calc(100vw - 2em);
+    background: #fefefe;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+
+    .close{
+      display: inline-block;
+      position: absolute;
+      top: .25em;
+      right: .35em;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      font-size: 3rem;
+      cursor: pointer;
+
+      &:hover{
+        color: #11ABB0;
+      }
+    }
+
+    .modal-header{
+      padding: 1.5em 0;
+      text-align: center;
+      margin-bottom: 2em;
+
+      .pokemon-image{
+        width: 150px;
+        display: inline-block;
+      }
+
+      .pokemon-name{
+        text-transform: capitalize;
+        margin-bottom: .75em;
+      }
+
+      .type-name{
+        padding: .25em .5em;
+        border-radius: .75em;
+        box-shadow: 0 0 .25em #ddd;
+        color: #EEE;
+        display: inline-block;
+        margin: 0 .5em;
+      }
+  
+    }
+
+    .modal-body{
+      padding: 1em 2em;
+      text-align: center;
+      overflow-y: auto;
+      background: #f1f1f1;
+      width: 95%;
+      border-radius: .75em;
+
+      p{
+        margin-bottom: .75em;
+      }
+
+      section{
+        margin-bottom: 2.5em;
+
+        h3{
+          border-bottom: 2px solid;
+          display: inline-block;
+          padding: .25em .75em;
+          margin-bottom: 1em;
+          color: #11ABB0;
+        }
+      }
+
+      .pokemon-stats-infos{
+        .pokemon-stat{
+          text-transform: capitalize;
+        }
+      }
+
+      .pokemon-abilities-infos{
+        .pokemon-ability{
+          text-transform: capitalize;
+        }
+      }
+
+      .pokemon-moves-infos{
+        .pokemon-move{
+          display: inline-block;
+          padding: .25em .75em;
+          margin: 0 .25em;
+          margin-bottom: .25em;
+          background: #3e3e3e;
+          color: #f5f5f5;
+          border-radius: .75em;
+        }
+      }
+
+    }
+  }
+
+}

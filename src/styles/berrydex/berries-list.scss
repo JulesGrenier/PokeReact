@@ -1,0 +1,14 @@
+#berries-list{
+  width: 800px;
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: #fff;
+  border-radius: .75em;
+  padding: .25em;
+  overflow-y: auto;
+
+  @import './berry';
+
+}

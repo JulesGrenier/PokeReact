@@ -1,0 +1,34 @@
+.berry-box{
+  text-align: center;
+  margin: 1em;
+  width: 200px;
+
+  @import '../loader';
+
+  .berry{
+    text-align: center;
+    margin: 1em;
+    cursor: pointer;
+    flex: 1;
+
+    &:hover{
+    
+      .berry-image{
+        background: #DDD;
+        box-shadow: inset 0 0 0.5em #AAA;
+        border-radius: 50%;
+      }
+    }
+
+    .berry-image{
+      display: inline-block;
+      transition: all .125s;
+    }
+
+    .berry-name{
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+
+  }
+}

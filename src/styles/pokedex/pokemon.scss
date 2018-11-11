@@ -1,0 +1,33 @@
+.pokemon-box{
+  text-align: center;
+  margin: 1em;
+  width: 200px;
+
+  @import '../loader';
+  
+  .pokemon{
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover{
+    
+      .pokemon-image{
+        background: #DDD;
+        box-shadow: inset 0 0 0.5em #AAA;
+        border-radius: 50%;
+      }
+    }
+
+    .pokemon-image{
+      display: inline-block;
+      transition: all .125s;
+      padding: .5em;
+    }
+
+    .pokemon-name{
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+
+  }
+}
