@@ -11,7 +11,7 @@ class App extends Component {
 
     return (
       <div className="app">
-        <BrowserRouter>
+        <BrowserRouter basename="/PokeReact">
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/pokedex' component={Pokedex} />
