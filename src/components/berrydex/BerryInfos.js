@@ -18,6 +18,7 @@ class BerryInfos extends Component {
             berry &&
             <React.Fragment>
               <div className='modal-header'>
+                <img src={require(`../../img/berries/${berry.name}-berry.png`)} alt={berry.name} className="berry-image"/>
                 <h2 className='berry-name'>#{berry.id} {berry.name}</h2>
 
                 <div className="berry-flavors">

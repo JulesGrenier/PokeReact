@@ -56,7 +56,7 @@ class Berry extends Component {
         {
           berryInfos &&
           <div className="berry" onClick={this.handleModal}>
-            <img src="" alt="" className="berry-image"/>
+            <img src={require(`../../img/berries/${berryInfos.name}-berry.png`)} alt={berryInfos.name} className="berry-image"/>
             <h3 className="berry-name">
               {berryInfos.name}
               <br />
