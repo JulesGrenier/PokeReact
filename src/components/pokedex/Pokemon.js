@@ -19,7 +19,9 @@ class Pokemon extends Component {
 
   getPokemonInfos(){
     const { pokemon } = this.props;
-    fetch(pokemon.url)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}/`, {
+      "Access-Control-Allow-Origin": "application/json"
+    })
     .then(res => res.json())
     .then(pokemonInfos => this.setState({
       pokemonInfos
@@ -29,11 +31,9 @@ class Pokemon extends Component {
   handleModal(){
     if(document.body.style.overflow === 'hidden') {
       document.body.style.overflow = '';
-      console.log('show');
     }
     else {
       document.body.style.overflow = 'hidden';
-      console.log('hide');
     }
     this.setState({
       isPokemonActive: !this.state.isPokemonActive
