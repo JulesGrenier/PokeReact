@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 class Pokedex extends Component {
 
   componentDidMount(){
-    document.title = 'Pokedex - PokeReact';
+    document.title = 'Pokedex';
   }
 
   render() {

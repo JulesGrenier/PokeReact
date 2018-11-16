@@ -16,7 +16,7 @@ class BerryList extends Component {
   }
 
   getData(url){
-    if (!url) url = 'https://pokeapi.co/api/v2/berry/';
+    if (!url) url = 'https://pokeapi.ssd1.ovh/api/v2/berry/';
     fetch(url)
     .then(res => res.json())
     .then(data => this.setState({
@@ -26,6 +26,7 @@ class BerryList extends Component {
   }
 
   handlePageChange(url, page){
+    window.scrollTo(0,0);
     this.setState({
       currentPage: this.state.currentPage + page
     })
@@ -39,7 +40,7 @@ class BerryList extends Component {
 
   render() {
 
-    const { data } = this.state;
+    const { data, currentPage } = this.state;
 
     return (
       <React.Fragment>
@@ -60,7 +61,7 @@ class BerryList extends Component {
                 ))
               }
             </div>
-            {/* <div className="pagination">
+            <div className="pagination">
               {
                 data.previous &&
                 <a
@@ -80,7 +81,7 @@ class BerryList extends Component {
                   className='next-page'
                 >{">"}</a>
               }
-            </div> */}
+            </div>
           </React.Fragment>
         }
       </React.Fragment>

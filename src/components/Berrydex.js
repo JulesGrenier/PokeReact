@@ -6,7 +6,7 @@ import '../styles/berrydex/berrydex.scss';
 class Berrydex extends Component {
 
   componentDidMount(){
-    document.title = 'Berrydex - PokeReact';
+    document.title = 'Berrydex';
   }
 
   render() {
