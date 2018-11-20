@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/pokedex/pokemon-modal.scss';
+import '../../styles/modal.scss';
 
 class PokemonInfos extends Component {
   
@@ -10,16 +10,16 @@ class PokemonInfos extends Component {
     const typeColors = require('../../data/type-colors.json');
 
     return (
-      <div id='pokemon-modal' className={modalActive}>
-        <div className='modal'>
+      <div className={`modal ${modalActive}`}>
+        <div className='modal-container'>
           <span className="close" onClick={handleModal}>&times;</span>
 
           {
             pokemon &&
             <React.Fragment>
               <div className='modal-header'>
-                <img src={pokemon.sprites.front_default} alt={pokemon.name} className="pokemon-image"/>
-                <h2 className='pokemon-name'>#{pokemon.id} {pokemon.name}</h2>
+                <img src={pokemon.sprites.front_default} alt={pokemon.name} className="item-image pokemon-img"/>
+                <h2 className='item-name'>#{pokemon.id} {pokemon.name}</h2>
                 <div className="pokemon-types">
                   {
                     pokemon.types.map((type) => 

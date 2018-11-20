@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PokemonInfos from './PokemonInfos';
 import Loader from '../Loader';
-import '../../styles/pokedex/pokemon.scss';
 
 class Pokemon extends Component {
 
@@ -50,19 +49,19 @@ class Pokemon extends Component {
     const { pokemonInfos, isPokemonActive } = this.state;
 
     return (
-      <div className="pokemon-box">
+      <div className="list-item">
         {
           !pokemonInfos &&
           <Loader />
         }
         {
           pokemonInfos &&
-          <div className="pokemon" onClick={this.handleModal}>
-            <img src={pokemonInfos.sprites.front_default} alt={pokemonInfos.name} className="pokemon-image"/>
-            <h3 className="pokemon-name">
+          <div className="item" onClick={this.handleModal}>
+            <img src={pokemonInfos.sprites.front_default} alt={pokemonInfos.name} className="item-image pokemon-img"/>
+            <h3 className="item-name">
               {pokemonInfos.name}
               <br />
-              <span className="pokemon-id">#{pokemonInfos.id}</span>
+              <span className="item-id">#{pokemonInfos.id}</span>
             </h3>
           </div>
         }

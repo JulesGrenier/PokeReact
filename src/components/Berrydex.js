@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation';
-import BerryList from './berrydex/BerryList';
-import '../styles/berrydex/berrydex.scss';
+import List from './List';
+import '../styles/dexter.scss';
 
 class Berrydex extends Component {
 
@@ -11,10 +11,10 @@ class Berrydex extends Component {
 
   render() {
     return (
-      <div id='berrydex'>
+      <div className='dexter'>
         <h1>Berrydex</h1>
         <Navigation />
-        <BerryList {...this.props} />
+        <List {...this.props} parent='berrydex' type='berry' />
       </div>
     );
   }

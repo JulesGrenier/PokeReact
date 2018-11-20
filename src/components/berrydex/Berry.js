@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BerryInfos from './BerryInfos';
 import Loader from '../Loader';
-import '../../styles/berrydex/berry.scss';
 
 class Berry extends Component {
 
@@ -48,19 +47,19 @@ class Berry extends Component {
     const { berryInfos, isBerryActive } = this.state;
 
     return (
-      <div className='berry-box'>
+      <div className='list-item'>
         {
           !berryInfos &&
           <Loader />
         }
         {
           berryInfos &&
-          <div className="berry" onClick={this.handleModal}>
-            <img src={require(`../../img/berries/${berryInfos.name}-berry.png`)} alt={berryInfos.name} className="berry-image"/>
-            <h3 className="berry-name">
+          <div className="item" onClick={this.handleModal}>
+            <img src={require(`../../img/berries/${berryInfos.name}-berry.png`)} alt={berryInfos.name} className="item-image berry-img"/>
+            <h3 className="item-name">
               {berryInfos.name}
               <br />
-              <span className="berry-id">#{berryInfos.id}</span>
+              <span className="item-id">#{berryInfos.id}</span>
             </h3>
           </div>
         }

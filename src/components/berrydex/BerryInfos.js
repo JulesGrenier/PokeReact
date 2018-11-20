@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/berrydex/berry-modal.scss';
+import '../../styles/modal.scss';
 
 class BerryInfos extends Component {
 
@@ -10,16 +10,16 @@ class BerryInfos extends Component {
     const flavorColors = require('../../data/flavor-colors.json');
 
     return (
-      <div id='berry-modal' className={modalActive}>
-        <div className='modal'>
+      <div className={`modal ${modalActive}`}>
+        <div className='modal-container'>
           <span className="close" onClick={handleModal}>&times;</span>
 
           {
             berry &&
             <React.Fragment>
               <div className='modal-header'>
-                <img src={require(`../../img/berries/${berry.name}-berry.png`)} alt={berry.name} className="berry-image"/>
-                <h2 className='berry-name'>#{berry.id} {berry.name}</h2>
+                <img src={require(`../../img/berries/${berry.name}-berry.png`)} alt={berry.name} className="item-image berry-img"/>
+                <h2 className='item-name'>#{berry.id} {berry.name}</h2>
 
                 <div className="berry-flavors">
                   {

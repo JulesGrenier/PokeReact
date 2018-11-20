@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PokemonList from './pokedex/PokemonList';
-import '../styles/pokedex/pokedex.scss';
+import List from './List';
+import '../styles/dexter.scss';
 import Navigation from './Navigation';
 
 class Pokedex extends Component {
@@ -11,10 +11,10 @@ class Pokedex extends Component {
 
   render() {
     return (
-      <div id='pokedex'>
+      <div className='dexter'>
         <h1>Pokedex</h1>
         <Navigation />
-        <PokemonList {...this.props} />
+        <List {...this.props} parent='pokedex' type='pokemon' />
       </div>
     );
   }
