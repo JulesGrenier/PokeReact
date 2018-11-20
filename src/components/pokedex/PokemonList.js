@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import Pokemon from './Pokemon';
 import '../../styles/pokedex/pokemons-list.scss';
 
@@ -8,8 +9,7 @@ class PokemonList extends Component {
   constructor(props){
     super(props);
     this.state = {
-      data: null,
-      currentPage: 1
+      data: null
     }
 
     this.getData = this.getData.bind(this);
@@ -17,7 +17,17 @@ class PokemonList extends Component {
   }
 
   getData(url){
-    if (!url) url = 'https://pokeapi.ssd1.ovh/api/v2/pokemon/';
+    const limit = 20;
+    let offset = 0;
+    let { page } = this.props.match.params;
+    if(page){
+      offset = (Number(page) -1) * 20;
+    }
+    else{
+      page = 1;
+    }
+
+    if (!url) url = `https://pokeapi.ssd1.ovh/api/v2/pokemon?offset=${offset}&limit=${limit}`;
     fetch(url)
     .then(res => res.json())
     .then(data => this.setState({
@@ -26,22 +36,21 @@ class PokemonList extends Component {
     )
   }
 
-  handlePageChange(url, page){
+  handlePageChange(url){
     window.scrollTo(0,0);
-    this.setState({
-      currentPage: this.state.currentPage + page
-    })
-    this.setState({data: null, pokemonsList: null})
     this.getData(url);
   }
   
   componentDidMount(){
-    this.getData()
+    const { page } = this.props.match.params;
+    if(!page || page <= 0 ) this.props.history.replace('/pokedex/page/1');
+    this.getData();
   }
 
   render() {
 
-    const { data, currentPage } = this.state;
+    const { data } = this.state;
+    const { page } = this.props.match.params;
 
     return (
       <React.Fragment>
@@ -65,22 +74,22 @@ class PokemonList extends Component {
             <div className="pagination">
               {
                 data.previous &&
-                <a
-                  onClick={() => this.handlePageChange(data.previous, -1)}
-                  href='#!'
+                <NavLink
+                  onClick={() => this.handlePageChange(data.previous)}
+                  to={`/pokedex/page/${Number(page) - 1}`}
                   className='prev-page'
-                >{"<"}</a>
+                >{"<"}</NavLink>
               }
 
-              <span className='curr-page'>{`Page ${currentPage}`}</span>
+              <span className='curr-page'>{`Page ${page}`}</span>
               
               {
                 data.next &&
-                <a
-                  onClick={() => this.handlePageChange(data.next, 1)}
-                  href='#!'
+                <NavLink
+                  onClick={() => this.handlePageChange(data.next)}
+                  to={`/pokedex/page/${Number(page) + 1}`}
                   className='next-page'
-                >{">"}</a>
+                >{">"}</NavLink>
               }
             </div>
           </React.Fragment>

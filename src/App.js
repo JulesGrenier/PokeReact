@@ -14,8 +14,10 @@ class App extends Component {
         <BrowserRouter basename="/PokeReact">
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/pokedex' component={Pokedex} />
-            <Route exact path='/berrydex' component={Berrydex} />
+            <Route exact path='/pokedex' render={(props) => <Pokedex {...props} />} />
+            <Route exact path='/pokedex/page/:page' render={(props) => <Pokedex {...props} />} />
+            <Route exact path='/berrydex' render={(props) => <Berrydex {...props} />} />
+            <Route exact path='/berrydex/page/:page' render={(props) => <Berrydex {...props} />} />
           </Switch>
         </BrowserRouter>
       </div>

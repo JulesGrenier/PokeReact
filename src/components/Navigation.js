@@ -10,8 +10,8 @@ class Navigation extends Component {
     return (
       <nav id='navigation'>
         <NavLink exact to='/'><img src={backpack} alt=""/></NavLink>
-        <NavLink exact to='/pokedex'><img src={pokedex} alt=""/></NavLink>
-        <NavLink exact to='/berrydex'><img src={berry} alt=""/></NavLink>
+        <NavLink to='/pokedex'><img src={pokedex} alt=""/></NavLink>
+        <NavLink to='/berrydex'><img src={berry} alt=""/></NavLink>
       </nav>
     );
   }

@@ -14,7 +14,7 @@ class Berrydex extends Component {
       <div id='berrydex'>
         <h1>Berrydex</h1>
         <Navigation />
-        <BerryList />
+        <BerryList {...this.props} />
       </div>
     );
   }

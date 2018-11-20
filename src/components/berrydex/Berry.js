@@ -18,7 +18,9 @@ class Berry extends Component {
 
   getBerryInfos(){
     const { berry } = this.props;
-    fetch(berry.url)
+    fetch(`https://pokeapi.ssd1.ovh/api/v2/berry/${berry.name}`, {
+      "Access-Control-Allow-Origin": "application/json"
+    })
     .then(res => res.json())
     .then(berryInfos => this.setState({
       berryInfos
@@ -28,11 +30,9 @@ class Berry extends Component {
   handleModal(){
     if(document.body.style.overflow === 'hidden') {
       document.body.style.overflow = '';
-      console.log('show');
     }
     else {
       document.body.style.overflow = 'hidden';
-      console.log('hide');
     }
     this.setState({
       isBerryActive: !this.state.isBerryActive

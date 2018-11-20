@@ -14,7 +14,7 @@ class Pokedex extends Component {
       <div id='pokedex'>
         <h1>Pokedex</h1>
         <Navigation />
-        <PokemonList />
+        <PokemonList {...this.props} />
       </div>
     );
   }
