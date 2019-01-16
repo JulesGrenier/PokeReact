@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import PokemonList from './pokedex/PokemonList';
-import '../styles/pokedex/pokedex.scss';
+import List from './List';
+import '../styles/dexter.scss';
 import Navigation from './Navigation';
 
 class Pokedex extends Component {
 
   componentDidMount(){
-    document.title = 'Pokedex - PokeReact';
+    document.title = 'Pokedex';
   }
 
   render() {
     return (
-      <div id='pokedex'>
+      <div className='dexter'>
         <h1>Pokedex</h1>
         <Navigation />
-        <PokemonList />
+        <List {...this.props} parent='pokedex' type='pokemon' />
       </div>
     );
   }
