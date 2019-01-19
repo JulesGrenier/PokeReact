@@ -29,7 +29,7 @@ class List extends Component {
 
     const { type } = this.props;
 
-    if (!url) url = `https://pokeapi.ssd1.ovh/api/v2/${type}/?offset=${offset}&limit=${limit}`;
+    if (!url) url = `https://pokeapi.co/api/v2/${type}/?offset=${offset}&limit=${limit}`;
     fetch(url)
     .then(res => res.json())
     .then(data => this.setState({

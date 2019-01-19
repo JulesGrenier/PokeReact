@@ -17,7 +17,7 @@ class Berry extends Component {
 
   getBerryInfos(){
     const { berry } = this.props;
-    fetch(`https://pokeapi.ssd1.ovh/api/v2/berry/${berry.name}`, {
+    fetch(`https://pokeapi.co/api/v2/berry/${berry.name}`, {
       "Access-Control-Allow-Origin": "application/json"
     })
     .then(res => res.json())
